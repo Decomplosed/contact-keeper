@@ -12,3 +12,10 @@ import {
   CLEAR_FILTER
 } from '../types'
 
+const ContactState = props => {
+  const initialState = {
+    contacts: [
+
+    ]
+  }
+}
