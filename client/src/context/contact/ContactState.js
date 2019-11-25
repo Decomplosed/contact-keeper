@@ -36,7 +36,8 @@ const ContactState = props => {
         phone: '112-431-1431',
         type: 'professional'
       }
-    ]
+    ],
+    current: null
   }
 
   const [state, dispatch] = useReducer(contactReducer, initialState)
