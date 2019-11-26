@@ -17,20 +17,34 @@ const AuthState = props => {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     loading: true,
+    user: null,
     error: null
   }
 
   const [state, dispatch] = useReducer(authReducer, initialState)
 
+  // Load User
+
+  // Register User
+
+  // Login User
+
+  // Logout
+
+  // Clear Errors
 
 
   return (
-    <ContactContext.Provider
+    <AuthContext.Provider
       value={{
-
+        token: state.token,
+        isAuthenticated: state.isAuthenticated,
+        loading: state.loading,
+        user: state.user,
+        error: state.error
       }}>
       {props.children}
-    </ContactContext.Provider>
+    </AuthContext.Provider>
   )
 }
 
