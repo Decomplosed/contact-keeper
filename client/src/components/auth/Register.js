@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import AlertContext from '../../context/alert/alertContext'
-import { set } from 'mongoose'
+
 
 const Register = () => {
   const alertContext = useContext(AlertContext)
