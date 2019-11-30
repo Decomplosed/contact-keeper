@@ -8,6 +8,15 @@ const Navbar = ({ title, icon }) => {
 
   const { isAuthenticated, logout, user } = authContext
 
+  const authLinks = (
+    <Fragment>
+      <li>Hello {user && user.name}</li>
+      <li>
+        <i className="fas fa-sign-out-alt"></i> <span className="hide-sm">Logout</span>
+      </li>
+    </Fragment>
+  )
+
   return (
     <div className="navbar bg-primary">
       <h1>
