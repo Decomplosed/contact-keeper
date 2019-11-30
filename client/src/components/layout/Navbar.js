@@ -17,6 +17,15 @@ const Navbar = ({ title, icon }) => {
     </Fragment>
   )
 
+  const guestLinks = (
+    <Fragment>
+      <li>Hello {user && user.name}</li>
+      <li>
+        <i className="fas fa-sign-out-alt"></i> <span className="hide-sm">Logout</span>
+      </li>
+    </Fragment>
+  )
+
   return (
     <div className="navbar bg-primary">
       <h1>
