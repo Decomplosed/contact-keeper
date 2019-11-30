@@ -6,6 +6,8 @@ import AuthContext from '../../context/auth/authContext'
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext)
 
+  const { isAuthenticated, logout, user } = authContext
+
   return (
     <div className="navbar bg-primary">
       <h1>
