@@ -6,49 +6,62 @@ const Login = () => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
 
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  })
+  const { setAlert } = alertContext
+  const { login, error, clearErrors, isAuthenticated } = authContext
 
-  const { email, password } = user
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/')
+    }
 
-  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
+    if (error === 'Invalid Credentials') {
+      setAlert(error, 'danger')
+      clearErrors()
+    }
 
-  const onSubmit = e => {
-    e.preventDefault()
+    const [user, setUser] = useState({
+      email: '',
+      password: ''
+    })
 
-    console.log('Login submit')
+    const { email, password } = user
+
+    const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
+
+    const onSubmit = e => {
+      e.preventDefault()
+
+      console.log('Login submit')
+    }
+
+    return (
+      <div className='form-container'>
+        <h1>
+          Account <span className='text-primary'>Login</span>
+        </h1>
+        <form onSubmit={onSubmit}>
+          <div className='form-group'>
+            <label htmlFor='email'>Email Address</label>
+            <input
+              type='email'
+              name='email'
+              value={email}
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='password'>Password</label>
+            <input
+              type='password'
+              name='password'
+              value={password}
+              onChange={onChange}
+            />
+          </div>
+          <input type='submit' value='Login' className='btn btn-primary btn-block' />
+        </form>
+      </div>
+    )
   }
-
-  return (
-    <div className='form-container'>
-      <h1>
-        Account <span className='text-primary'>Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-          />
-        </div>
-        <input type='submit' value='Login' className='btn btn-primary btn-block' />
-      </form>
-    </div>
-  )
-}
 
 export default Login
