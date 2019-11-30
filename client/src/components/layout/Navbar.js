@@ -32,12 +32,7 @@ const Navbar = ({ title, icon }) => {
         <i className={icon} /> {title}
       </h1>
       <ul>
-        <li>
-          <Link to='/register'>Register</Link>
-        </li>
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
+        {isAuthenticated ? authLinks : guestLinks}
       </ul>
     </div>
   )
