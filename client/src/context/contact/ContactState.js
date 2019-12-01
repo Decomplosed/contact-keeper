@@ -33,7 +33,7 @@ const ContactState = props => {
     }
 
     try {
-      const res = await axios.post('/api/contact', contact, config)
+      const res = await axios.post('/api/contacts', contact, config)
 
       dispatch({
         type: ADD_CONTACT,
