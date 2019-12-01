@@ -12,7 +12,7 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
-    case GET_CONTACTS
+    case GET_CONTACTS:
       return {
         ...state,
         contacts: action.payload,
