@@ -15,29 +15,7 @@ import {
 
 const ContactState = props => {
   const initialState = {
-    contacts: [
-      {
-        id: 1,
-        name: 'Jill Johnson',
-        email: 'jill@gmail.com',
-        phone: '111-111-1111',
-        type: 'personal'
-      },
-      {
-        id: 2,
-        name: 'Lucky Luke',
-        email: 'luke@gmail.com',
-        phone: '113-121-1143',
-        type: 'personal'
-      },
-      {
-        id: 3,
-        name: 'Harry Potter',
-        email: 'hpotter@gmail.com',
-        phone: '112-431-1431',
-        type: 'professional'
-      }
-    ],
+    contacts: [],
     current: null,
     filtered: null
   }
